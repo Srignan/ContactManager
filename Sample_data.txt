@@ -1,0 +1,13 @@
+INSERT INTO Users (FirstName, LastName, Email, Phone, PasswordHash)
+VALUES 
+    ('John', 'Doe', 'john.doe@gmail.com', '1234567890', 'hashedpassword1'),
+    ('Jane', 'Doe', 'jane.doe@gmail.com', '0987654321', 'hashedpassword2');
+	
+	
+INSERT INTO Contacts (UserID, Name, Email, Phone)
+VALUES 
+    (1, 'Alice', 'alice@gmail.com', '1234567890'),  -- Alice is a contact of John Doe
+    (1, 'Bob', 'bob@gmail.com', '0987654321'),      -- Bob is also a contact of John Doe
+    (2, 'Charlie', 'charlie@gmail.com', '1234567890'), -- Charlie is a contact of Jane Doe
+    (2, 'David', 'david@gmail.com', '0987654321');     -- David is also a contact of Jane Doe
+
