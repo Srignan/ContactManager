@@ -17,8 +17,8 @@
     else
     {
         // Prepare the SQL statement
-        $stmt = $conn->prepare("SELECT ID, firstName, lastName, PasswordHash FROM Users WHERE Email=?");
-        $stmt->bind_param("s", $inData["email"]);
+        $stmt = $conn->prepare("SELECT ID, FirstName, LastName, PasswordHash FROM Users WHERE Username=?");
+        $stmt->bind_param("s", $inData["Username"]);
         $stmt->execute();
 
         // Get the result of the SQL query
