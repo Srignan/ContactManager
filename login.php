@@ -27,8 +27,8 @@
         if( $row = $result->fetch_assoc()  )
         {
             // Verify the password
-            if(password_verify($inData["password"], $row['PasswordHash'])) {
-                returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+            if(password_verify($inData["Password"], $row['PasswordHash'])) {
+                returnWithInfo( $row['FirstName'], $row['LastName'], $row['ID'] );
             } else {
                 returnWithError("Invalid Password");
             }
