@@ -1,13 +1,17 @@
-INSERT INTO Users (FirstName, LastName, Email, Phone, PasswordHash)
-VALUES 
-    ('John', 'Doe', 'john.doe@gmail.com', '1234567890', 'hashedpassword1'),
-    ('Jane', 'Doe', 'jane.doe@gmail.com', '0987654321', 'hashedpassword2');
-	
-	
-INSERT INTO Contacts (UserID, Name, Email, Phone)
-VALUES 
-    (1, 'Alice', 'alice@gmail.com', '1234567890'),  -- Alice is a contact of John Doe
-    (1, 'Bob', 'bob@gmail.com', '0987654321'),      -- Bob is also a contact of John Doe
-    (2, 'Charlie', 'charlie@gmail.com', '1234567890'), -- Charlie is a contact of Jane Doe
-    (2, 'David', 'david@gmail.com', '0987654321');     -- David is also a contact of Jane Doe
+INSERT INTO Users (FirstName, LastName, Username, Phone, PasswordHash, DateCreated)
+VALUES ('Alice', 'Johnson', 'alice.johnson@mail.com', '123-456-7890', '$2y$10$5BtqaIfRvjhuB/HM/UCIIu7XNeAgmu6Vfig5rkuzP4tnHOvzlKF.6', NOW());
 
+SET @userId = LAST_INSERT_ID();
+
+INSERT INTO Contacts (UserID, FirstName, LastName, Email, Phone, DateCreated)
+VALUES 
+(@userId, 'Robert', 'Smith', 'robert.smith@mail.com', '201-123-4567', NOW()),
+(@userId, 'Emma', 'Williams', 'emma.williams@mail.com', '202-234-5678', NOW()),
+(@userId, 'James', 'Brown', 'james.brown@mail.com', '203-345-6789', NOW()),
+(@userId, 'Sophia', 'Davis', 'sophia.davis@mail.com', '204-456-7890', NOW()),
+(@userId, 'Michael', 'Garcia', 'michael.garcia@mail.com', '205-567-8901', NOW()),
+(@userId, 'Olivia', 'Miller', 'olivia.miller@mail.com', '206-678-9012', NOW()),
+(@userId, 'William', 'Wilson', 'william.wilson@mail.com', '207-789-0123', NOW()),
+(@userId, 'Isabella', 'Moore', 'isabella.moore@mail.com', '208-890-1234', NOW()),
+(@userId, 'David', 'Taylor', 'david.taylor@mail.com', '209-901-2345', NOW()),
+(@userId, 'Ava', 'Anderson', 'ava.anderson@mail.com', '210-012-3456', NOW());
