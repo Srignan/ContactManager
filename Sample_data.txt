@@ -1,5 +1,5 @@
 INSERT INTO Users (FirstName, LastName, Username, Phone, PasswordHash, DateCreated)
-VALUES ('Alice', 'Johnson', 'alice.johnson@mail.com', '123-456-7890', '$2y$10$5BtqaIfRvjhuB/HM/UCIIu7XNeAgmu6Vfig5rkuzP4tnHOvzlKF.6', NOW());
+VALUES ('Alice', 'Johnson', 'AliceBob', '123-456-7890', '$2y$10$5BtqaIfRvjhuB/HM/UCIIu7XNeAgmu6Vfig5rkuzP4tnHOvzlKF.6', NOW());
 
 SET @userId = LAST_INSERT_ID();
 
