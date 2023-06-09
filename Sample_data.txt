@@ -55,3 +55,6 @@ VALUES
 (@userId, 'Natalie', 'Reed', 'natalie.reed@mail.com', '248-890-1234', NOW()),
 (@userId, 'Adam', 'Cook', 'adam.cook@mail.com', '249-901-2345', NOW()),
 (@userId, 'Penelope', 'Morgan', 'penelope.morgan@mail.com', '250-012-3456', NOW());
+
+
+-- Sample user username: AliceBob, Password: Password@123
