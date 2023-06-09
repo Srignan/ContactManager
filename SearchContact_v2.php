@@ -5,7 +5,8 @@
     error_reporting(E_ALL);
 
     $inData = getRequestInfo();
-    
+    $searchTerm = $inData["searchTerm"]; // Change "searchTerm" to the actual key name you expect in the request
+
     $conn = new mysqli("localhost", "root", "group16COP4331", "COP4331");
     if ($conn->connect_error) 
     {
@@ -13,13 +14,14 @@
     } 
     else
     {
-        $search = "%" . $inData["search"] . "%";
         $stmt = $conn->prepare("SELECT ID, userID, FirstName, LastName, Email, Phone FROM Contacts WHERE UserID=? AND (FirstName LIKE ? OR LastName LIKE ? OR Email LIKE ? OR Phone LIKE ?)");
+        
+        $search = "%$searchTerm%"; // Add wildcard characters to the search term
+        
         $stmt->bind_param("issss", $inData["userID"], $search, $search, $search, $search);
         $stmt->execute();
         $result = $stmt->get_result();
         
-
         $contacts = [];
         while ($row = $result->fetch_assoc())
         {
